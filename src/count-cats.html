@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function countCats(matrix) {
+      let matrixStr = [];
+      let result = 0;
+      for (i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[i].length; j++) {
+          if (matrix[i][j] === "^^") {
+            matrixStr.push(1);
+          }
+        }
+      };
+
+      for (let i = 0; i < matrixStr.length; i++) {
+        result=result + matrixStr[i];
+      }
+      return result;
+      console.log(matrixStr);
+    }
+
+
+    console.log("The number of cats:", countCats([
+      ['##', 'dd', '00'],
+      ['^^', '^', 'ss'],
+      ['AA', '^^', 'Oo'],
+    ]));
+  </script>
+</body>
+
+</html>
