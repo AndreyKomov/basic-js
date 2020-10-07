@@ -1,6 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
 
-module.exports = function repeater(str, options) {
-  let separ = "";
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function repeater(str, options) {
+      let separ = "";
       let addSepar = "";
       let additionalStr = options.addition;
 
@@ -18,8 +28,12 @@ module.exports = function repeater(str, options) {
         addSepar = "|";
       };
 
-      if (options.additional !== undefined) {
+      if (options.additional !== undefined && options.additionRepeatTimes !== 1) {
         for (i = 0; i < options.additionRepeatTimes - 1; i++) {
+          additionalStr = additionalStr + addSepar + options.addition;
+        };
+      } else if (options.additional !== undefined && options.additionRepeatTimes === 1) {
+        for (i = 0; i < options.additionRepeatTimes; i++) {
           additionalStr = additionalStr + addSepar + options.addition;
         };
       };
@@ -40,4 +54,13 @@ module.exports = function repeater(str, options) {
         };
       };
       return resultStr;
-};
+    };
+
+    // console.log(repeater('STRING', { repeatTimes: 3, separator: '**', addition: 'PLUS',
+    //  additionRepeatTimes: 3, additionSeparator: '00' }));
+    //  console.log('STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS');
+    console.log(repeater('la', { repeatTimes: 3, separator: 's', addition: '+', additionRepeatTimes: 1 }));
+  </script>
+</body>
+
+</html>

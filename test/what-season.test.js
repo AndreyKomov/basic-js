@@ -19,7 +19,8 @@ describe('What season', () => {
     //Specific requirements
 
     describe('base requirements', () => {
-        it.optional('returns proper value', () => {   
+        it.optional('returns proper value', () => {    
+
             const [ 
                 winter, 
                 spring, 

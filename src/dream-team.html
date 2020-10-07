@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let letterArr = [];
+    function createDreamTeam(members) {
+      if (members instanceof Array) {
+        members = members.filter(el => typeof (el) === "string");
+        for (let i = 0; i < members.length; i++) {
+          let nameArr = members[i].split("");
+          console.log(nameArr);
+
+          letterArr.push(nameArr[0]);
+        }
+        letterArr.sort();
+        console.log("join:", letterArr);
+        return letterArr.join("").toUpperCase();
+      } else {
+        return false;
+      }
+
+    }
+
+    // console.log("first:", createDreamTeam(['Kayla', 'Keith', 'Dennis', 'Carolyn', 'Diane', 'Timothy', 'Sandra', 'Laura', 'Bryan', 'Heather']));
+    console.log("second:", createDreamTeam([10, "u", "to"]));
+  </script>
+</body>
+
+</html>

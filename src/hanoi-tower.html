@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function calculateHanoi(disksNumber, turnsSpeed) {
+      let hanoiTower = {
+        turns: 0,
+        seconds: 0,
+      }
+
+      hanoiTower.turns = Math.pow(2, disksNumber) - 1;
+      hanoiTower.seconds = Math.floor((hanoiTower.turns) / (turnsSpeed / 3600));
+      return hanoiTower;
+    }
+
+    console.log(calculateHanoi(23, 4344));
+  </script>
+</body>
+
+</html>

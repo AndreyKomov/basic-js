@@ -1,6 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
 
-const chainMaker = {
-  resultChainArr: [],
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const chainMaker = {
+      resultChainArr: [],
       getLength() {
         return this.resultChainArr.length;     //return curent lenght of resultChainArr
       },
@@ -27,10 +37,18 @@ const chainMaker = {
 
       finishChain() {
         let resultChain = this.resultChainArr.join("~~");
-        this.resultChainArr = [];                                     //clear current array
-        console.log(resultChain);
+        // console.log(resultChain);
         return resultChain;
       }
-};
+    };
 
-module.exports = chainMaker;
+    // console.log(chainMaker.addLink(1).reverseChain().addLink(0).reverseChain().addLink(NaN).addLink(1.233).addLink(null).addLink({0: 'first', 1: 'second', 'length': 2}).reverseChain().addLink({0: 'first', 1: 'second', 'length': 2}).finishChain());
+    // console.log("( [object Object] )~~( null )~~( 1.233 )~~( NaN )~~( 1 )~~( 0 )~~( [object Object] )");
+    console.log(chainMaker.addLink('8.963').reverseChain().reverseChain().reverseChain().reverseChain().addLink({0: 'first', 1: 'second', 'length': 2}).reverseChain().addLink(3.14).addLink('DEF').reverseChain().finishChain());
+
+
+    
+  </script>
+</body>
+
+</html>

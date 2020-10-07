@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    function transform(arr) {
+      let arrCopy = arr;
+      console.log(arrCopy);
+      if (Array.isArray(arrCopy) === true) {
+        for (let i=0; i<arrCopy.length; i++) {
+          if (arrCopy[i] === "--double-next") {                                           //for double-next
+            i === arrCopy.length - 1 ? arrCopy.splice(i, 1) : arrCopy.splice(i, 1, arrCopy[i+1]);     //if "control sequences" located in the end, else add next copy
+
+          } else if (arrCopy[i] === "--double-prev") {                                                  //for double-prev
+            i === arrCopy.length - 1 ? arrCopy.splice(i, 1) : arrCopy.splice(i, 1, arrCopy[i - 1]);    //if "control sequences" located in the end, else previous copy
+
+          } else if (arrCopy[i] === "--discard-next") {                                   //for discard-next
+            i === arrCopy.length - 1 ? arrCopy.splice(i, 1) : arrCopy.splice(i, 2);                 //if "CS" located in the end, else delete current and next
+
+          } else if (arrCopy[i] === "--discard-prev") {                                  //for discard-prev
+            i === arrCopy.length -1 ? arrCopy.splice(i, 1) : arrCopy.splice(i-1, 2);                 //if "CS" located in the end, else dedllete current and previous
+          }
+        }
+      }
+
+      return arrCopy;
+    }
+
+
+  console.log(transform ([1, 2, 3, '--double-next', 1337, '--double-prev', 4, 5]));
+  console.log(transform ([1, 2, 3, '--double-next', 5]));
+  </script>
+</body>
+</html>
