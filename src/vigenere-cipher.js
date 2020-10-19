@@ -87,7 +87,7 @@ class VigenereCipheringMachine {
     if (this.mode) {
       return resultArrSecond.join("");
     } else {
-      resultArrSecond.join("").reverse();
+      return resultArrSecond.reverse().join("");
     };
 
   };
@@ -175,7 +175,7 @@ class VigenereCipheringMachine {
     if (this.mode) {
       return resultArrSecond.join("");
     } else {
-      return resultArrSecond.join("").reverse();
+      return resultArrSecond.reverse().join("");
     }
   };
 
