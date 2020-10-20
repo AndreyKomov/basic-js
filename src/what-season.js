@@ -6,6 +6,10 @@ module.exports = function getSeason(date) {
     return 'Unable to determine the time of year!';           //date is empty
   }
 
+  if (date === null) {
+    throw new Error ("Oooops");
+  };
+  
   let er = new Date(date);
   if (!!er.getDate() === true && date instanceof Date) {
     let month = date.getMonth();
@@ -19,7 +23,7 @@ module.exports = function getSeason(date) {
       return "autumn";
     }
   } else {
-    console.log('11111', date);
+    // console.log('11111', date);
     throw new Error("Oopss");
   }
 };
