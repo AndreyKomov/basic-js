@@ -1,10 +1,10 @@
 
 module.exports = class DepthCalculator {
-let maxDeep = 0;
-let count = 1;
+
 calculateDepth(arr) {
 
-  function calculateDepth(arr) {
+  let maxDeep = 0;
+let count = 1;
     if (!Array.isArray(arr)) {
       return 0;
     };
@@ -29,4 +29,3 @@ calculateDepth(arr) {
     return maxDeep;
   };
 }
-};
